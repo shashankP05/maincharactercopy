@@ -315,6 +315,12 @@ header.hero .pillars svg{width:34px;height:34px;padding:0;background:none;border
 @media (max-width:900px){.card.types ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.card.types{grid-column:auto}.card.types ul{grid-template-columns:minmax(0,1fr)}}
 .card.types li{align-content:start}
+/* phones: pillars as a 2-column grid so all are visible without a hidden sideways swipe; the odd last one spans the full row */
+@media (max-width:860px){
+  header.hero .pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible}
+  header.hero .pillars div{min-width:0;white-space:normal;border-radius:16px}
+  header.hero .pillars div:last-of-type:nth-of-type(odd){grid-column:1/-1}
+}
 @media (max-width:860px){header.hero{grid-template-columns:minmax(0,1fr)}}
 </style>
 
